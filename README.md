@@ -1,1 +1,1 @@
-The data analyzed was the microdata Brazil' National Exam of High School.
+The data analyzed were microdata from the Brazilian National High School Exam.
