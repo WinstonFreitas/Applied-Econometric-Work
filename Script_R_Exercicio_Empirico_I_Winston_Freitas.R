@@ -1,19 +1,20 @@
-#Exercício Empírico I
-#Tóipcos Especiais em Econometria I
-
-#Instalação das bibliotecas que serão usadas
-install.packages("tidyverse")
-install.packages("heaven") 
+#Used libraries
+install.packages("readcsv2")
 install.packages("ggplot2")
-install.packages("dplyr")
+install.packages("ggridges")
+install.packages("tydeverse")
+install.packages("broom")
+install.packages("corrplot")
 install.packages("car")
-#Etapa de carregamento dos dados e visualização
+install.packages("heaven")
 
-library(haven)
-dados <- read_dta("data.dta") #O arquivo estava na mesma pasta que o script
-dados <- data
-View(dados)
+library(readr)
+library(ggplot2)
+library(ggridges)
 
+#Loading the ENEM microdata
+library(data.table)
+ENEM_df <- fread(file.choose(), sep = ";", encoding = "Latin-1")
 
 #Médias e desvio-padrão das notas(excluindo faltosos)
 attach(dados)
