@@ -16,36 +16,39 @@ library(ggridges)
 library(data.table)
 ENEM_df <- fread(file.choose(), sep = ";", encoding = "Latin-1")
 
-#Médias e desvio-padrão das notas(excluindo faltosos)
-attach(dados)
+#Descriptive statistics of grades
+attach(ENEM_df)
 
+#Natural Sciences
+median(NU_NOTA_CN, na.rm = TRUE)
+mean(NU_NOTA_CN, na.rm = TRUE)
+sd(NU_NOTA_CN, na.rm = TRUE)
 
-##Ciências da Natureza
-mean(nu_nota_cn, na.rm = TRUE)
-sd(nu_nota_cn, na.rm = TRUE)
+#Human sciences
+median(NU_NOTA_CH, na.rm = TRUE)
+mean(NU_NOTA_CH, na.rm = TRUE)
+sd(NU_NOTA_CH, na.rm = TRUE)
 
-##Ciências da Humanas
-mean(nu_nota_ch, na.rm = TRUE)
-sd(nu_nota_ch, na.rm = TRUE)
+#Languages and codes
+median(NU_NOTA_LC, na.rm = TRUE)
+mean(NU_NOTA_LC, na.rm = TRUE)
+sd(NU_NOTA_LC, na.rm = TRUE)
 
-##Linguagens e Códigos
-mean(nu_nota_lc, na.rm = TRUE)
-sd(nu_nota_lc, na.rm = TRUE)
+#Mathmatics
+median(NU_NOTA_MT, na.rm = TRUE)
+mean(NU_NOTA_MT, na.rm = TRUE)
+sd(NU_NOTA_MT, na.rm = TRUE)
 
-##Média da nota de Matemática
-mean(nu_nota_mt, na.rm = TRUE)
-sd(nu_nota_mt, na.rm = TRUE)
-
-#criando uma coluna com notas de Redação as notas das 5 competências
+#Essay
+#The final grade of essay is the sum of 5 Competências(Skills).
 library(dplyr)
-dados <- dados %>%
-  mutate(redação_final = nu_nota_comp1 + nu_nota_comp2 + nu_nota_comp3 + nu_nota_comp4 + nu_nota_comp5)
+ENEM_df <- ENEM_df %>%
+  mutate(RED_FINAL = NU_NOTA_COMP1 + NU_NOTA_COMP2 + NU_NOTA_COMP3 + NU_NOTA_COMP4 + NU_NOTA_COMP5)
 
-
-head(dados$redação_final)  # Mostra as primeiras linhas da nova coluna
-summary(dados$redação_final)  # Estatísticas da nova variável
-
-sd(redação_final, na.rm = TRUE)
+attach(ENEM_df)
+median(RED_FINAL, na.rm = TRUE)
+mean(RED_FINAL, na.rm = TRUE)
+sd(RED_FINAL, na.rm = TRUE)
 
 ###criando gráficos de densidade
 
