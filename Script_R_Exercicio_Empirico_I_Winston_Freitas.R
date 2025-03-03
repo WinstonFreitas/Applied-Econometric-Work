@@ -20,23 +20,19 @@ ENEM_df <- fread(file.choose(), sep = ";", encoding = "Latin-1")
 attach(ENEM_df)
 
 #Natural Sciences
-median(NU_NOTA_CN, na.rm = TRUE)
-mean(NU_NOTA_CN, na.rm = TRUE)
+summary(NU_NOTA_CN)
 sd(NU_NOTA_CN, na.rm = TRUE)
 
 #Human sciences
-median(NU_NOTA_CH, na.rm = TRUE)
-mean(NU_NOTA_CH, na.rm = TRUE)
+summary(NU_NOTA_CH)
 sd(NU_NOTA_CH, na.rm = TRUE)
 
 #Languages and codes
-median(NU_NOTA_LC, na.rm = TRUE)
-mean(NU_NOTA_LC, na.rm = TRUE)
+summary(NU_NOTA_LC)
 sd(NU_NOTA_LC, na.rm = TRUE)
 
 #Mathmatics
-median(NU_NOTA_MT, na.rm = TRUE)
-mean(NU_NOTA_MT, na.rm = TRUE)
+summary(NU_NOTA_MT)
 sd(NU_NOTA_MT, na.rm = TRUE)
 
 #Essay
@@ -46,8 +42,7 @@ ENEM_df <- ENEM_df %>%
   mutate(RED_FINAL = NU_NOTA_COMP1 + NU_NOTA_COMP2 + NU_NOTA_COMP3 + NU_NOTA_COMP4 + NU_NOTA_COMP5)
 
 attach(ENEM_df)
-median(RED_FINAL, na.rm = TRUE)
-mean(RED_FINAL, na.rm = TRUE)
+summary(RED_FINAL)
 sd(RED_FINAL, na.rm = TRUE)
 
 ###criando gráficos de densidade
