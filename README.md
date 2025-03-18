@@ -1,4 +1,4 @@
-What are the determinants of the grades in the Brazilian National High School Exam(ENEM in portuguese)? This paper seeks to answer this question.
+What are the determinants of the grades in the Brazilian National High School Exam(ENEM in portuguese)? This project seeks to answer this question.
 
 The data analyzed were microdata from the 2023 Brazilian National High School Exam(ENEM).
 
